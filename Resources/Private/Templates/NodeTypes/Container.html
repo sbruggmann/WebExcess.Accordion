@@ -1,0 +1,5 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:if condition="{neos:rendering.inBackend()}">
+	<div class="neos-accordion-plugin-title">{neos:backend.translate(id: 'ui.label', source: 'NodeTypes/Container', package: 'WebExcess.Accordion')}</div>
+</f:if>
+{content -> f:format.raw()}

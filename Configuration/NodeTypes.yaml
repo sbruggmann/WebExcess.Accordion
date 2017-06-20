@@ -1,0 +1,82 @@
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'WebExcess.Accordion:Content': FALSE
+
+'WebExcess.Accordion:Container':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    label: i18n
+    group: 'structure'
+    icon: 'icon-chevron-down'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        accordion:
+          label: i18n
+          position: 1
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'WebExcess.Accordion:Content': TRUE
+  properties:
+    closeOthers:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        inspector:
+          group: 'accordion'
+    firstOpen:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: i18n
+        inspector:
+          group: 'accordion'
+
+'WebExcess.Accordion:Content':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  ui:
+    label: i18n
+    group: 'structure'
+    icon: 'icon-chevron-down'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        accordion:
+          label: i18n
+          position: 1
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'WebExcess.Accordion:Container': FALSE
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: Title
+          format: {}
+          table: {}
+          link: {}
+          list: {}
+          alignment: {}
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: true
+    active:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: i18n
+        inspector:
+          group: 'accordion'

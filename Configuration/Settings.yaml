@@ -1,0 +1,15 @@
+
+WebExcess:
+  Accordion:
+    includeCss: false
+    includeJavascript: false
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          WebExcess.Accordion:
+            - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        WebExcess.Accordion: true
